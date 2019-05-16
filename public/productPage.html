@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Product Page</title>
+
+    <style>
+
+        .gallery-wrap .img-big-wrap img {
+            height: auto;
+            max-width: 100%;
+            display: inline-block;
+            cursor: zoom-in;
+        }
+
+        .rating {
+            float: left;
+        }
+
+        .rating:not(:checked) > input {
+            position: absolute;
+            top: -9999px;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .rating:not(:checked) > label {
+            float: right;
+            width: 1em;
+            /* padding:0 .1em; */
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 200%;
+            /* line-height:1.2; */
+            color: #ddd;
+        }
+
+        .rating:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+        .rating > input:checked ~ label {
+            color: darkred;
+
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: darkred;
+
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > input:checked ~ label:hover,
+        .rating > input:checked ~ label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label {
+            color: darkred;
+
+        }
+
+        .rating > label:active {
+            position: relative;
+            top: 2px;
+            left: 2px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <div class="row">
+            <aside class="col-sm-5 border-right">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap img-responsive">
+                        <div><a href="#"><img
+                                src="https://images.footlocker.com/is/image/EBFL2/04103873_a1?wid=640&hei=640&fmt=png-alpha"></a>
+                        </div>
+                    </div>
+                </article>
+            </aside>
+            <aside class="col-sm-7">
+                <article class="card-body p-5">
+                    <h3 class="title mb-3">Nike Air Force 1 Low</h3>
+
+                    <p class="price-detail-wrap">
+	<span class="price h3 text-secondary">
+		<span class="num">$120.00</span>
+	</span>
+                    <div class="container">
+                        <div class="row">
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating" value="5"/><label for="star5"
+                                                                                               title="Amazing">5
+                                stars</label>
+                                <input type="radio" id="star4" name="rating" value="4"/><label for="star4"
+                                                                                               title="Pretty good">4
+                                stars</label>
+                                <input type="radio" id="star3" name="rating" value="3"/><label for="star3"
+                                                                                               title="Not bad">3
+                                stars</label>
+                                <input type="radio" id="star2" name="rating" value="2"/><label for="star2"
+                                                                                               title="Kinda bad">2
+                                stars</label>
+                                <input type="radio" id="star1" name="rating" value="1"/><label for="star1"
+                                                                                               title="Yuck">1
+                                star</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    </p> <!-- price-detail-wrap .// -->
+                    <dl class="item-property">
+
+                        <dt>Description</dt>
+                        <dd><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore
+                            magna aliqua. Auctor augue mauris augue neque gravida in fermentum. Sit amet dictum sit amet
+                            justo donec enim.
+                            Sodales ut etiam sit amet nisl purus in mollis. Porta non pulvinar neque laoreet suspendisse
+                            interdum consectetur
+                            libero. Dolor sit amet consectetur adipiscing. Turpis massa tincidunt dui ut ornare lectus
+                            sit amet est. Pretium
+                            lectus quam id leo in vitae turpis massa sed. Magna fringilla urna porttitor rhoncus dolor.
+                            Congue mauris rhoncus
+                            aenean vel elit scelerisque mauris pellentesque pulvinar. Vestibulum morbi blandit cursus
+                            risus at. Nibh mauris
+                        </p>
+                        </dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt>Type</dt>
+                        <dd>Jordan</dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt>Color</dt>
+                        <dd>White</dd>
+                    </dl>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <dl class="param param-inline">
+                                <dt>Quantity:</dt>
+                                <dd>
+                                    <select class="form-control form-control-sm" style="width:70px;">
+                                        <option value="1"> 1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3"> 3</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-sm-7">
+                            <dl class="param param-inline">
+                                <a href="#" class="btn btn-lg btn-danger text-uppercase"> <i
+                                        class="fas fa-shopping-cart"></i>Add to cart </a>
+                            </dl>
+                        </div>
+                    </div>
+
+                </article>
+            </aside>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

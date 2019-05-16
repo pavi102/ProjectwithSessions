@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Product Page</title>
+
+    <style>
+
+        .gallery-wrap .img-big-wrap img {
+            height: auto;
+            max-width: 100%;
+            display: inline-block;
+            cursor: zoom-in;
+        }
+
+        .rating {
+            float: left;
+        }
+
+        .rating:not(:checked) > input {
+            position: absolute;
+            top: -9999px;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .rating:not(:checked) > label {
+            float: right;
+            width: 1em;
+            /* padding:0 .1em; */
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 200%;
+            /* line-height:1.2; */
+            color: #ddd;
+        }
+
+        .rating:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+        .rating > input:checked ~ label {
+            color: darkred;
+
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: darkred;
+
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > input:checked ~ label:hover,
+        .rating > input:checked ~ label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label {
+            color: darkred;
+
+        }
+
+        .rating > label:active {
+            position: relative;
+            top: 2px;
+            left: 2px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+{{>nav_bar}}
+
+<br>
+
+<div class="container">
+
+    <div class="card">
+        <div class="row">
+            <aside class="col-sm-5 border-right">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap">
+                        <div>
+                            <a href="#">
+                                <img src="{{product.path}}">
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </aside>
+            <aside class="col-sm-7">
+                <article class="card-body p-5">
+                    <h3 class="title mb-3">Nike Air Force 1 Low</h3>
+
+                    <p class="price-detail-wrap">
+	<span class="price h3 text-secondary">
+		<span class="num">{{product.price}}</span>
+	</span>
+                    <div class="container">
+                        <div class="row">
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating" value="5"/><label for="star5"
+                                                                                               title="Amazing">5
+                                stars</label>
+                                <input type="radio" id="star4" name="rating" value="4"/><label for="star4"
+                                                                                               title="Pretty good">4
+                                stars</label>
+                                <input type="radio" id="star3" name="rating" value="3"/><label for="star3"
+                                                                                               title="Not bad">3
+                                stars</label>
+                                <input type="radio" id="star2" name="rating" value="2"/><label for="star2"
+                                                                                               title="Kinda bad">2
+                                stars</label>
+                                <input type="radio" id="star1" name="rating" value="1"/><label for="star1"
+                                                                                               title="Yuck">1
+                                star</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    </p> <!-- price-detail-wrap .// -->
+                    <dl class="item-property">
+
+                        <dt>Description</dt>
+                        <dd><p>{{product.description}}
+                        </p>
+                        </dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt>Type</dt>
+                        <dd>{{product.type}}</dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt>Color</dt>
+                        <dd>{{product.color}}</dd>
+                    </dl>
+
+                    <hr>
+                    <form action="/add-to-cart" method="post" style="margin-left: 5px; margin-right: 5px;">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <dl class="param param-inline">
+                                    <dt>Quantity:</dt>
+                                    <dd class="w-50">
+                                        <input class="form-control input-sm w-100" name="quantity" type="number" step="1" min="1" max="99">
+                                    </dd>
+                                </dl>  <!-- item-property .// -->
+                            </div> <!-- col.// -->
+                            <div class="col-sm-9 col-md-6">
+                                <dl class="param param-inline">
+                                    <button type="submit" class="btn btn-danger btn-lg float-right" style="margin-top: 17px;"
+                                            onclick="itemadded()">Add to cart
+                                    </button>
+                                    <input type="hidden" value="{{product._id}}" name="objectid">
+                                </dl>
+                            </div>
+                        </div>
+
+                    </form>
+                </article>
+            </aside>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

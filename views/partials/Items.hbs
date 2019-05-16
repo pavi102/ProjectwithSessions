@@ -1,0 +1,23 @@
+<div class="container-fluid text-center">
+    <div class="row justify-content-center">
+
+        {{#each products}}
+            <!--Card 1 -->
+            <div class="card mt-5 bg-light" style="width: 18rem; margin: 5%;">
+                <div class="img-hover-zoom img-responsive">
+                    <a href="/product/{{this._id}}"><img class="card-img-top" id="img" src="{{this.path}}" alt="{{this.name}}" onclick="itemadded()"></a>
+                </div>
+                <div class="card-body">
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="type"><h4>{{this.type}} {{this.name}}</h4></li>
+
+
+                </ul>
+
+            </div>
+            <!--Card 1 end-->
+        {{/each}}
+    </div>
+</div>
+
